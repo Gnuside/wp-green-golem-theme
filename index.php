@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<section id='article-list'>                                                                                   
+
 <header class='heading yellow'>                                                                                       
   <!-- FIXME: get search title ... -->
   <h2>FIXME: <?php single_cat_title(); ?></h2>                                                                                                 
@@ -9,20 +11,18 @@
   </a>                                                                                                                
 </header> 
 
+
 <!--FIXME: insérer la liste des pages -->
 
 <?php if(have_posts()) : ?>
 <?php while(have_posts()) : the_post(); ?>
-	<article class="post">
-		<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
-		<div class="post_content">
-			<?php the_content(); ?>
-		</div>
-	</article>
+	<?php get_template_part( 'content', 'archive' ); ?>
 	<?php endwhile; ?>
 <?php endif; ?>
 
 
 <!--FIXME: insérer la liste des pages -->
+
+</section> <!-- #article-list -->
 
 <?php get_footer(); ?>
