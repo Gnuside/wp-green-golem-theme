@@ -251,7 +251,7 @@ nav {
         margin-right: 10px;
         font-size: 0.9rem;
         margin-bottom: 0.9rem; }
-        #content #article-list article header .category {
+        #content #article-list article header .category a {
           color: #f14d4d; }
           #content #article-list article header .category:after {
             content: " | ";
