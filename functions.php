@@ -24,21 +24,33 @@ if ( ! function_exists( 'revenudebase_wp_head' ) ) {
 	}
 }
 
-
 /**
  * Register menus
  */
 add_action( 'init', 'revenudebase_init_menus' );
 if ( ! function_exists( 'revenudebase_init_menus' ) ) {
-    function revenudebase_init_menus () {
-        register_nav_menus(array(
-            'navigation_menu' => 'Navigation',
-            'footer_menu_about' => 'Footer menu à propos',
-            'footer_menu_partners' => 'Footer menu partenaires',
-            'footer_menu_act' => 'Footer menu agir',
-            'footer_menu_social' => 'Footer menu réseaux sociaux'
-        ));
-    }
+	function revenudebase_init_menus () {
+		register_nav_menus(array(
+			'navigation_menu' => 'Navigation',
+			'footer_menu_about' => 'Footer menu à propos',
+			'footer_menu_partners' => 'Footer menu partenaires',
+			'footer_menu_act' => 'Footer menu agir',
+			'footer_menu_social' => 'Footer menu réseaux sociaux'
+		));
+	}
+}
+
+/* Usefull functions */
+
+function revenudebase_get_thumbnail_url( $post_id, $thumb_size = 'small' ) {
+	$post_thumbnail_url = null;
+	if ( has_post_thumbnail( $post->id )) {
+		$post_thumbnail_url = wp_get_attachment_url( get_post_thumbnail_id( $post->id ) );
+		// $post_thumbnail_url = wp_get_attachment_thumb_url( $post->id );
+	} else {
+		$post_thumbnail_url = get_template_directory_uri() . '/images/thumb_placeholder.png';
+	}
+	return $post_thumbnail_url;
 }
 
 ?>
