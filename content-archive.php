@@ -1,16 +1,12 @@
 <?php
 /* prepare content */
+
 $post = get_post( get_the_ID() );
+
 
 /* use featured image (thumbnail) if possible
  * or placeholder instead
  */
-$post_thumbnail_url = null;
-if ( has_post_thumbnail( $post->id )) {
-	$post_thumbnail_url = wp_get_attachment_url( get_post_thumbnail_id( $post->id ) );
-} else {
-	$post_thumbnail_url = get_template_directory_uri() . '/images/thumb_placeholder.png';
-}
 
 ?>
 <article id="post-<?php echo $post->id; ?>" <?php post_class(); ?>> 
