@@ -22,10 +22,10 @@
         <div class='columns'>
           <?php
             $footerMenus = array(
-                'footer_menu_about',
-                'footer_menu_partners',
-                'footer_menu_act',
-                'footer_menu_social'
+                'footer_menu_left',
+                'footer_menu_center_left',
+                'footer_menu_center_right',
+                'footer_menu_right'
             );
 
             foreach ( $footerMenus as $footerMenu ) :

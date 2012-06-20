@@ -32,10 +32,10 @@ if ( ! function_exists( 'revenudebase_init_menus' ) ) {
 	function revenudebase_init_menus () {
 		register_nav_menus(array(
 			'navigation_menu' => 'Navigation',
-			'footer_menu_about' => 'Footer menu à propos',
-			'footer_menu_partners' => 'Footer menu partenaires',
-			'footer_menu_act' => 'Footer menu agir',
-			'footer_menu_social' => 'Footer menu réseaux sociaux'
+			'footer_menu_left' => 'Footer menu gauche',
+			'footer_menu_center_left' => 'Footer menu centre gauche',
+			'footer_menu_center_right' => 'Footer menu centre droite',
+			'footer_menu_right' => 'Footer menu droite'
 		));
 	}
 }
