@@ -3,6 +3,13 @@
 add_action('admin_init', 'revenudebase_admin_init');
 add_action('admin_menu', 'revenudebase_admin_menu');
 
+register_nav_menus(array(
+    'footer_menu_about' => 'Footer menu à propos',
+    'footer_menu_partners' => 'Footer menu partenaires',
+    'footer_menu_act' => 'Footer menu agir',
+    'footer_menu_social' => 'Footer menu réseaux sociaux'
+));
+
 $categories = array();
 
 function revenudebase_admin_init() {
@@ -13,7 +20,7 @@ function revenudebase_admin_init() {
 }
 
 function revenudebase_admin_menu() {
-	add_theme_page( 
+	add_theme_page(
 		__( 'RevenuDeBase Options', 'revenudebase'), // page title
 		__('RevenuDeBase Options', 'revenudebase'), // menu title
 		'edit_theme_options',  // capability
@@ -30,12 +37,12 @@ function revenudebase_option_page() {
 
 	?>
 	<div class="wrap">
-	<?php 
-		screen_icon(); 
-		echo sprintf("<h2>%s - %s</h2>", 
-			get_current_theme(), 
+	<?php
+		screen_icon();
+		echo sprintf("<h2>%s - %s</h2>",
+			get_current_theme(),
 			__( 'Theme Options', 'themeoptions' )
-		); 
+		);
 	?>
 
 	<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
@@ -46,47 +53,47 @@ function revenudebase_option_page() {
 
 	 <h3>Homepage Categories</h3>
 	 <form method="post" action="options.php">
-		<?php 
-		settings_fields( 'revenudebase_options' ); 
-		$options = get_option( 'revenudebase_options_prefix' ); 
-		?>                                                   
+		<?php
+		settings_fields( 'revenudebase_options' );
+		$options = get_option( 'revenudebase_options_prefix' );
+		?>
 		<p>Debug:
 		<pre><code>
 		<?php print_r($options); ?>
 		</code></pre>
 		</p>
 		<label>Left column</label>
-		<?php wp_dropdown_categories( array( 
+		<?php wp_dropdown_categories( array(
 			'name' => 'revenudebase_options_prefix[homepage_cat_left]',
 			'selected'  => $options['homepage_cat_left'],
-			'hide_empty' => 0, 
+			'hide_empty' => 0,
 			'show_count' => 1,
 			'hierarchical' => 1
 		)); ?>
 		<br/>
 
 		<label>Center column</label>
-		<?php wp_dropdown_categories( array( 
+		<?php wp_dropdown_categories( array(
 			'name' => 'revenudebase_options_prefix[homepage_cat_center]',
 			'selected'  => $options['homepage_cat_center'],
-			'hide_empty' => 0, 
+			'hide_empty' => 0,
 			'show_count' => 1,
 			'hierarchical' => 1
 		)); ?>
 		<br/>
 
 		<label>Right column</label>
-		<?php wp_dropdown_categories( array( 
+		<?php wp_dropdown_categories( array(
 			'name' => 'revenudebase_options_prefix[homepage_cat_right]',
 			'selected'  => $options['homepage_cat_right'],
-			'hide_empty' => 0, 
+			'hide_empty' => 0,
 			'show_count' => 1,
 			'hierarchical' => 1
 		)); ?>
 		<br/>
 
 		<p class="submit">
-			<input type="submit" class="button-primary" value="  <?php _e( 'Save Options', 'sampletheme' ); ?>" />    
+			<input type="submit" class="button-primary" value="  <?php _e( 'Save Options', 'sampletheme' ); ?>" />
 		</p>
 	</form>
 	</div>

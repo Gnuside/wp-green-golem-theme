@@ -1,95 +1,68 @@
 	</div>
-	<aside id='widgets'>                                                                                            
-		<form>                                                                                                        
-		  <input class='search' placeholder='Recherche' type='text' />                                                
-		</form>                                                                                                       
-		<div class='prepend-top'>                                                                                     
-		  <a class='newsletter' href='#'>                                                                             
-			<img src='<?php echo get_template_directory_uri(); ?>/images/newsletter.png' />                                                                       
-			S'inscrire à la newsletter                                                                                
-		  </a>                                                                                                        
-		</div>                                                                                                        
-		<div class='prepend-top'>                                                                                     
+	<aside id='widgets'>
+		<form>
+		  <input class='search' placeholder='Recherche' type='text' />
+		</form>
+		<div class='prepend-top'>
+		  <a class='newsletter' href='#'>
+			<img src='<?php echo get_template_directory_uri(); ?>/images/newsletter.png' />
+			S'inscrire à la newsletter
+		  </a>
+		</div>
+		<div class='prepend-top'>
 		  <div class='fb-like-box' data-header='true' data-href='http://www.facebook.com/RevenudeBase' data-show-faces='true' data-stream=  'false' data-width='210'></div>
-		</div>                                                                                                        
-		<div class='prepend-top'>                                                                                     
+		</div>
+		<div class='prepend-top'>
 		  <a class='twitter-follow-button' data-lang='fr' data-show-count='false' data-size='large' href='https://twitter.com/revenudebase  '>Suivre @revenudebase</a>
-		</div>                                                                                                        
-		<div class='prepend-top' id='twitter-widget'></div>                                                           
+		</div>
+		<div class='prepend-top' id='twitter-widget'></div>
 	  </aside>
 	</section>
       <footer>
         <div class='columns'>
           <div class='column'>
             <h2>À propos</h2>
-            <ul>
-              <li>
-                <a href='#'>Qui sommes-nous</a>
-              </li>
-              <li>
-                <a href='#'>Contact</a>
-              </li>
-              <li>
-                <a href='#'>Mentions légales</a>
-              </li>
-              <li>
-                <a href='#'>Recevoir la newsletter</a>
-              </li>
-            </ul>
+            <?php
+                if ( has_nav_menu( 'footer_menu_about' ) ) {
+                    wp_nav_menu( array(
+                        'container' => '',
+                        'theme_location' => 'footer_menu_about'
+                    ));
+                }
+            ?>
           </div>
           <div class='column'>
             <h2>Partenaires</h2>
-            <ul>
-              <li>
-                <a href='#'>BIEN</a>
-              </li>
-              <li>
-                <a href='#'>Appel pour le revenu de vie</a>
-              </li>
-              <li>
-                <a href='#'>Basic Income News</a>
-              </li>
-              <li>
-                <a href='#'>Initiative citoyenne européenne</a>
-              </li>
-            </ul>
+            <?php
+                if ( has_nav_menu( 'footer_menu_partners' ) ) {
+                    wp_nav_menu( array(
+                        'container' => '',
+                        'theme_location' => 'footer_menu_partners'
+                    ));
+                }
+            ?>
           </div>
           <div class='column'>
             <h2>Agir</h2>
-            <ul>
-              <li>
-                <a href='#'>Faire un don</a>
-              </li>
-              <li>
-                <a href='#'>Proposer un article</a>
-              </li>
-              <li>
-                <a href='#'>Goodies</a>
-              </li>
-              <li>
-                <a href='#'>Trouver un groupe local</a>
-              </li>
-            </ul>
+            <?php
+                if ( has_nav_menu( 'footer_menu_act' ) ) {
+                    wp_nav_menu( array(
+                        'container' => '',
+                        'theme_location' => 'footer_menu_act'
+                    ));
+                }
+            ?>
           </div>
           <div class='column'>
             <h2>Réseaux sociaux</h2>
-            <ul>
-              <li>
-                <a href='#'>Twitter</a>
-              </li>
-              <li>
-                <a href='#'>Facebook</a>
-              </li>
-              <li>
-                <a href='#'>Google plus</a>
-              </li>
-              <li>
-                <a href='#'>Flickr</a>
-              </li>
-              <li>
-                <a href='#'>Youtube</a>
-              </li>
-            </ul>
+            <?php
+                if ( has_nav_menu( 'footer_menu_social' ) ) {
+                    wp_nav_menu( array(
+                        'container' => '',
+                        'theme_location' => 'footer_menu_social'
+                    ));
+                }
+            ?>
           </div>
         </div>
         <div class='credits'>
@@ -154,5 +127,6 @@
         }).render().start();
       //]]>
     </script>
+        <?php wp_footer(); ?>
   </body>
 </html>
