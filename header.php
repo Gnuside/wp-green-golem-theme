@@ -20,9 +20,9 @@
 
 	<title>
 		<?php bloginfo('name') ?>
-		<?php if ( is_404() ) : ?> 
+		<?php if ( is_404() ) : ?>
 			&raquo; <?php _e('Not Found') ?>
-		<?php elseif ( is_home() ) : ?> 
+		<?php elseif ( is_home() ) : ?>
 			&raquo; <?php bloginfo('description') ?>
 		<?php else : ?>
 			<?php wp_title() ?>
@@ -36,13 +36,13 @@
     <div class='container'>
       <!-- / header with logo & stuff -->
 	  <header class='top-header'>
-		<div class='logo'><!-- FIXME: replace with title / handle linebreak -->Revenu                                                               
-          <br />                                                                                                          
+		<div class='logo'><!-- FIXME: replace with title / handle linebreak -->Revenu
+          <br />
           de Base</div><div class='baseline'><!-- FIXME: replace with description / handle linebreak -->
-            Et vous, que feriez-vous                                                                                      
-            <br />                                                                                                        
-            si votre revenu était garanti ?                                                                               
-          </div> 
+            Et vous, que feriez-vous
+            <br />
+            si votre revenu était garanti ?
+          </div>
         <div class='socialmedia'>
           <div class='social'>
             <a href='#'>
@@ -67,37 +67,15 @@
         </div>
       </header>
       <nav>
-        <ul class='major'>
-          <li>
-            <a>Actualités</a>
-          </li>
-          <li>
-            <a>Évènements</a>
-          </li>
-          <li class='active'>
-            <a>À propos</a>
-          </li>
-          <li>
-            <a>Communauté</a>
-          </li>
-          <li>
-            <a>Pétition Européenne</a>
-          </li>
-          <li>
-            <a>Agir, Soutenir</a>
-          </li>
-        </ul>
-        <ul class='minor'>
-          <li>
-            <a>Opinions</a>
-          </li>
-          <li>
-            <a>Actualités</a>
-          </li>
-          <li>
-            <a>À l'action</a>
-          </li>
-        </ul>
+        <?php
+            if ( has_nav_menu( 'navigation_menu' ) ) {
+                wp_nav_menu(array(
+                    'container' => '',
+                    'menu_class' => 'major',
+                    'theme_location' => 'navigation_menu'
+                ));
+            }
+        ?>
       </nav>
       <section class='content-container'>
         <div id='definition'>
