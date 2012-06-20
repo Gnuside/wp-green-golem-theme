@@ -48,21 +48,21 @@ $column_right_posts = get_posts( array(
   <section>
 
 	<?php $post = $top_featured_post ; setup_postdata($post); ?>
-	<article class='span-11 append-1 emphasis first'>
-	  <img src='<?php echo get_template_directory_uri(); ?>/images/placeholder_mib.png' width='100%' />
+	<article class='span-11 extended emphasis first halfcolborder'>
+	  <img src='<?php echo revenudebase_get_thumbnail_url( $post->ID ); ?>' width='100%' />
 	  <header>
+		<p class='context'><?php echo get_the_date(); ?></p>
 		<h3 class='context'><?php the_title(); ?></h3>
 	  </header>
 	  <section>
 		<p><?php the_excerpt(); ?></p>
-		<p class='context'><?php echo the_date(); ?></p>
 	  </section>
 	</article>
 
 	<section class='span-5 extended last'>
 		<?php foreach( $column_featured_posts as $post ): setup_postdata($post); ?>
 		<article class='emphasis'>
-			<p class='context'><?php echo the_date(); ?></p>
+			<p class='context'><?php echo get_the_date(); ?></p>
 		  <header>
 		  <h3><?php the_title(); ?></h3>
 		  </header>
@@ -90,7 +90,7 @@ $column_right_posts = get_posts( array(
 
 	<?php foreach( $column_left_posts as $post ): setup_postdata($post); ?>
 	<article class='emphasis'>
-		<p class='context'><?php echo the_date(); ?></p>
+		<p class='context'><?php echo get_the_date(); ?></p>
 	  <header>
 	  <h3><?php the_title(); ?></h3>
 	  </header>
@@ -121,7 +121,7 @@ $column_right_posts = get_posts( array(
 
 	<?php foreach( $column_center_posts as $post ): setup_postdata($post); ?>
 	<article class='emphasis'>
-		<p class='context'><?php echo the_date(); ?></p>
+		<p class='context'><?php echo get_the_date(); ?></p>
 	  <header>
 	  <h3><?php the_title(); ?></h3>
 	  </header>
@@ -151,7 +151,7 @@ $column_right_posts = get_posts( array(
 
 	<?php foreach( $column_right_posts as $post ): setup_postdata($post); ?>
 	<article class='emphasis'>
-		<p class='context'><?php echo the_date(); ?></p>
+		<p class='context'><?php echo get_the_date(); ?></p>
 	  <header>
 	  <h3><?php the_title(); ?></h3>
 	  </header>
