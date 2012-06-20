@@ -24,4 +24,21 @@ if ( ! function_exists( 'revenudebase_wp_head' ) ) {
 	}
 }
 
+
+/**
+ * Register menus
+ */
+add_action( 'init', 'revenudebase_init_menus' );
+if ( ! function_exists( 'revenudebase_init_menus' ) ) {
+    function revenudebase_init_menus () {
+        register_nav_menus(array(
+            'navigation_menu' => 'Navigation',
+            'footer_menu_about' => 'Footer menu à propos',
+            'footer_menu_partners' => 'Footer menu partenaires',
+            'footer_menu_act' => 'Footer menu agir',
+            'footer_menu_social' => 'Footer menu réseaux sociaux'
+        ));
+    }
+}
+
 ?>

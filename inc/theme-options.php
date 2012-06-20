@@ -3,13 +3,6 @@
 add_action('admin_init', 'revenudebase_admin_init');
 add_action('admin_menu', 'revenudebase_admin_menu');
 
-register_nav_menus(array(
-    'footer_menu_about' => 'Footer menu à propos',
-    'footer_menu_partners' => 'Footer menu partenaires',
-    'footer_menu_act' => 'Footer menu agir',
-    'footer_menu_social' => 'Footer menu réseaux sociaux'
-));
-
 $categories = array();
 
 function revenudebase_admin_init() {
