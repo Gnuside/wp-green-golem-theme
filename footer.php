@@ -20,50 +20,30 @@
 	</section>
       <footer>
         <div class='columns'>
+          <?php
+            $footerMenus = array(
+                'footer_menu_about',
+                'footer_menu_partners',
+                'footer_menu_act',
+                'footer_menu_social'
+            );
+
+            foreach ( $footerMenus as $footerMenu ) :
+                if ( has_nav_menu( $footerMenu ) ) :
+          ?>
           <div class='column'>
-            <h2>À propos</h2>
-            <?php
-                if ( has_nav_menu( 'footer_menu_about' ) ) {
-                    wp_nav_menu( array(
-                        'container' => '',
-                        'theme_location' => 'footer_menu_about'
-                    ));
-                }
-            ?>
+          <h2><?php wp_nav_menu_title( $footerMenu ); ?></h2>
+          <?php
+            wp_nav_menu( array(
+                'container' => '',
+                'theme_location' => $footerMenu
+            ));
+          ?>
           </div>
-          <div class='column'>
-            <h2>Partenaires</h2>
-            <?php
-                if ( has_nav_menu( 'footer_menu_partners' ) ) {
-                    wp_nav_menu( array(
-                        'container' => '',
-                        'theme_location' => 'footer_menu_partners'
-                    ));
-                }
-            ?>
-          </div>
-          <div class='column'>
-            <h2>Agir</h2>
-            <?php
-                if ( has_nav_menu( 'footer_menu_act' ) ) {
-                    wp_nav_menu( array(
-                        'container' => '',
-                        'theme_location' => 'footer_menu_act'
-                    ));
-                }
-            ?>
-          </div>
-          <div class='column'>
-            <h2>Réseaux sociaux</h2>
-            <?php
-                if ( has_nav_menu( 'footer_menu_social' ) ) {
-                    wp_nav_menu( array(
-                        'container' => '',
-                        'theme_location' => 'footer_menu_social'
-                    ));
-                }
-            ?>
-          </div>
+          <?php
+                endif;
+            endforeach;
+          ?>
         </div>
         <div class='credits'>
           Revenu de Base est propulsé par

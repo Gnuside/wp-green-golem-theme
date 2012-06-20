@@ -53,4 +53,20 @@ function revenudebase_get_thumbnail_url( $post_id, $thumb_size = 'small' ) {
 	return $post_thumbnail_url;
 }
 
+/**
+ * Display menu title
+ */
+function wp_nav_menu_title( $theme_location ) {
+	$title = '';
+	if ( $theme_location && ( $locations = get_nav_menu_locations() ) && isset( $locations[ $theme_location ] ) ) {
+		$menu = wp_get_nav_menu_object( $locations[ $theme_location ] );
+
+		if( $menu && $menu->name ) {
+			$title = $menu->name;
+		}
+	}
+
+	echo apply_filters( 'wp_nav_menu_title', $title, $theme_location );
+}
+
 ?>
