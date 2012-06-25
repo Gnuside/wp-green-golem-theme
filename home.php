@@ -40,7 +40,8 @@ $column_right_posts = get_posts( array(
 <section class='span-17 extended last'>
   <header class='heading yellow'>
 	<h2>À la une</h2>
-	<a class='feed' href='#FIXME'>
+	<!-- <a class='feed' href='<?php echo get_category_feed_link( 
+$column_left_catid ); ?>'> -->
 	  <img src='images/rss-black.png' />
 	</a>
   </header>
@@ -60,21 +61,16 @@ $column_right_posts = get_posts( array(
 	</article>
 
 	<section class='span-5 extended last'>
-		<?php foreach( $column_featured_posts as $post ): setup_postdata($post); ?>
-		<article class='emphasis'>
-			<p class='context'><?php echo get_the_date(); ?></p>
-		  <header>
-		  <h3><?php the_title(); ?></h3>
-		  </header>
-		  <!--
-		  <aside class='right'>
-			<img src='<?php echo get_template_directory_uri(); ?>/images/medium.png' />
-		  </aside>
-		 <section>
-			<p><?php the_excerpt(); ?></p>
-		  </section> -->
-		</article>
-		<?php endforeach; ?>
+	<?php 
+	foreach( $column_featured_posts as $post ){
+		setup_postdata($post);
+		$format = get_post_format( $post->ID );
+		if ( "" == $format ) {
+			$format = "emphasis";
+		}
+		get_template_part( 'content', $format );
+	}
+	?>
 	</section>
   </section>
 </section>
@@ -83,25 +79,22 @@ $column_right_posts = get_posts( array(
   <section class='span-5 extended halfcolborder'>
 	<header class='heading yellow'>
 	<h2><?php echo $column_left_catname; ?></h2>
-	  <a class='feed' href='#FIXME'>
+	  <a class='feed' href='<?php echo get_category_feed_link( 
+$column_left_catid ); ?>'>
 	  <img src='<?php echo get_template_directory_uri(); ?>/images/rss-black.png' />
 	  </a>
 	</header>
 
-	<?php foreach( $column_left_posts as $post ): setup_postdata($post); ?>
-	<article class='emphasis'>
-		<p class='context'><?php echo get_the_date(); ?></p>
-	  <header>
-	  <h3><?php the_title(); ?></h3>
-	  </header>
-	  <aside class='right'>
-		<img src='<?php echo get_template_directory_uri(); ?>/images/medium.png' />
-	  </aside>
-	  <section>
-		<p><?php the_excerpt(); ?></p>
-	  </section>
-	</article>
-	<?php endforeach; ?>
+<?php 
+foreach( $column_left_posts as $post ){
+	setup_postdata($post);
+	$format = get_post_format( $post->ID );
+	if ( "" == $format ) {
+		$format = "emphasis";
+	}
+	get_template_part( 'content', $format );
+}
+?>
 
 	<div class='prepend-top right'>
 	  <p>
@@ -114,25 +107,22 @@ $column_right_posts = get_posts( array(
   <section class='span-5 extended halfcolborder'>
 	<header class='heading orange'>
 	<h2><?php echo $column_center_catname; ?></h2>
-	  <a class='feed' href='#FIXME'>
+	  <a class='feed' href='<?php echo get_category_feed_link( 
+$column_center_catid ); ?>'>
 	  <img src='<?php echo get_template_directory_uri(); ?>/images/rss-black.png' />
 	  </a>
 	</header>
 
-	<?php foreach( $column_center_posts as $post ): setup_postdata($post); ?>
-	<article class='emphasis'>
-		<p class='context'><?php echo get_the_date(); ?></p>
-	  <header>
-	  <h3><?php the_title(); ?></h3>
-	  </header>
-	  <aside class='right'>
-		<img src='<?php echo get_template_directory_uri(); ?>/images/medium.png' />
-	  </aside>
-	  <section>
-		<p><?php the_excerpt(); ?></p>
-	  </section>
-	</article>
-	<?php endforeach; ?>
+<?php 
+foreach( $column_center_posts as $post ){
+	setup_postdata($post);
+	$format = get_post_format( $post->ID );
+	if ( "" == $format ) {
+		$format = "emphasis";
+	}
+	get_template_part( 'content', $format );
+}
+?>
 
 	<div class='prepend-top right'>
 	  <p>
@@ -144,25 +134,22 @@ $column_right_posts = get_posts( array(
   <section class='span-5 extended last'>
 	<header class='heading red'>
 	<h2><?php echo $column_right_catname; ?></h2>
-	  <a class='feed' href='#FIXME'>
+	  <a class='feed' href='<?php echo get_category_feed_link( 
+$column_right_catid ); ?>'>
 	  <img src='<?php echo get_template_directory_uri(); ?>/images/rss-black.png' />
 	  </a>
 	</header>
 
-	<?php foreach( $column_right_posts as $post ): setup_postdata($post); ?>
-	<article class='emphasis'>
-		<p class='context'><?php echo get_the_date(); ?></p>
-	  <header>
-	  <h3><?php the_title(); ?></h3>
-	  </header>
-	  <aside class='right'>
-		<img src='<?php echo get_template_directory_uri(); ?>/images/medium.png' />
-	  </aside>
-	  <section>
-		<p><?php the_excerpt(); ?></p>
-	  </section>
-	</article>
-	<?php endforeach; ?>
+<?php 
+foreach( $column_right_posts as $post ){
+	setup_postdata($post);
+	$format = get_post_format( $post->ID );
+	if ( "" == $format ) {
+		$format = "emphasis";
+	}
+	get_template_part( 'content', $format );
+}
+?>
 
 	<div class='prepend-top right'>
 	  <p>
