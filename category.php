@@ -21,7 +21,6 @@ if(have_posts()) {
 		if ( "" == $format ) {
 			$format = "archive";
 		}
-		echo "content-$format<br/>";
 		get_template_part( 'content', $format );
 	}
 } else {
