@@ -13,13 +13,15 @@
 <article id="post-<?php echo $post->ID; ?>" class='emphasis'>
 	<p class='context'><?php echo get_the_date(); ?></p>
   <header>
-  <h3><?php the_title(); ?></h3>
+  <h3><a href='<?php echo post_permalink($post->ID); ?>'><?php the_title(); ?></a></h3>
   </header>
   <aside class='right'>
-	<img src='<?php echo get_template_directory_uri(); ?>/images/medium.png' />
+	<a href='<?php echo post_permalink($post->ID); ?>'><img src='<?php echo get_template_directory_uri(); ?>/images/medium.png' /></a>
   </aside>
   <section>
-	<p><?php the_excerpt(); ?></p>
+	<a href='<?php echo post_permalink($post->ID); ?>'>
+	<?php the_excerpt(); ?>
+	</a>
   </section>
 </article><!-- #post-<?php the_ID(); ?> -->
 
