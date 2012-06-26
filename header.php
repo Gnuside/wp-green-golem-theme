@@ -36,9 +36,12 @@
     <div class='container'>
       <!-- / header with logo & stuff -->
 	  <header class='top-header'>
-	  <div class='logo'><!-- FIXME: replace with title / handle linebreak --><a href="<?php bloginfo('wpurl'); ?>">Revenu
+	  <div class='logo'><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png"/>
+        </div>
+	  <div class='name'><!-- FIXME: replace with title / handle linebreak --><a href="<?php bloginfo('wpurl'); ?>">Revenu
           <br />
-          de Base</a></div><div class='baseline'><!-- FIXME: replace with description / handle linebreak -->
+		  de Base</a></div>
+		<div class='baseline'><!-- FIXME: replace with description / handle linebreak -->
             Et vous, que feriez-vous
             <br />
             si votre revenu était garanti ?

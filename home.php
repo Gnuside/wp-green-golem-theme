@@ -98,7 +98,7 @@ foreach( $column_left_posts as $post ){
 
 	<div class='prepend-top right'>
 	  <p>
-	    <a href='<?php echo get_category_link( $column_left_catid ); ?>'>En savoir plus…</a>
+	    <a href='<?php echo get_category_link( $column_left_catid ); ?>'>Voir tous les articles…</a>
 	  </p>
 	</div>
   </section>
@@ -126,7 +126,7 @@ foreach( $column_center_posts as $post ){
 
 	<div class='prepend-top right'>
 	  <p>
-	    <a href='<?php echo get_category_link( $column_center_catid ); ?>'>En savoir plus…</a>
+	    <a href='<?php echo get_category_link( $column_center_catid ); ?>'>Voir tous les articles…</a>
 	  </p>
 	</div>
   </section>
@@ -153,7 +153,7 @@ foreach( $column_right_posts as $post ){
 
 	<div class='prepend-top right'>
 	  <p>
-	  <a href='<?php echo get_category_link( $column_right_catid ); ?>'>En savoir plus…</a>
+	  <a href='<?php echo get_category_link( $column_right_catid ); ?>'>Voir tous les articles…</a>
 	  </p>
 	</div>
   </section>
