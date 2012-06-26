@@ -38,9 +38,9 @@
 	  <header class='top-header'>
 	  <div class='logo'><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png"/>
         </div>
-	  <div class='name'><!-- FIXME: replace with title / handle linebreak --><a href="<?php bloginfo('wpurl'); ?>">Revenu
+	  <h1 class='name'><!-- FIXME: replace with title / handle linebreak --><a href="<?php bloginfo('wpurl'); ?>">Revenu
           <br />
-		  de Base</a></div>
+		  de Base</a></h1>
 		<div class='baseline'><!-- FIXME: replace with description / handle linebreak -->
             Et vous, que feriez-vous
             <br />
