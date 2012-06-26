@@ -86,7 +86,7 @@
         	interval: 6000,
         	rpp: 4,
         	width: 210,
-        	height: 300,
+        	height: 400,
         	theme: {
         		shell: {
         			background: '#44654a',
@@ -102,6 +102,7 @@
         		scrollbar: false,
         		loop: false,
         		live: true,
+				avatars: false,
         		behavior: 'all'
         	}
         }).render().start();
