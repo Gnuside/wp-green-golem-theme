@@ -13,6 +13,13 @@ $category->cat_ID ); ?>'>
 <!--FIXME: insérer la liste des pages -->
 <?php revenudebase_pagination(); ?>
 
+<?php if (!empty($category->description)) {
+	echo "<div class='description'>"
+		.  category_description( $category->cat_ID )
+		. "</div>";
+	echo "<hr/>";
+} ?>
+
 <?php
 if(have_posts()) {
 	while(have_posts()) {
@@ -23,11 +30,9 @@ if(have_posts()) {
 		}
 		get_template_part( 'content', $format );
 	}
-} else {
-	echo "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.";
-}
-?>
-
+} else { ?>
+Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.
+<?php } ?>
 
 <!--FIXME: insérer la liste des pages -->
 <?php revenudebase_pagination(); ?>
