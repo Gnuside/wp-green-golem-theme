@@ -36,9 +36,9 @@
     <div class='container'>
       <!-- / header with logo & stuff -->
 	  <header class='top-header'>
-	  <div class='logo'><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png"/>
+	  <div class='logo'><a href="<?php bloginfo('wpurl'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png"/></a>
         </div>
-	  <h1 class='name'><!-- FIXME: replace with title / handle linebreak --><a href="<?php bloginfo('wpurl'); ?>">Revenu
+	  <h1 class='name'><!-- FIXME: replace with site title / handle linebreak --><a href="<?php bloginfo('wpurl'); ?>">Revenu
           <br />
 		  de Base</a></h1>
 		<div class='baseline'><!-- FIXME: replace with description / handle linebreak -->
