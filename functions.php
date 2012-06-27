@@ -43,21 +43,6 @@ if ( ! function_exists( 'revenudebase_init_menus' ) ) {
 
 
 /*
- * Retrieve thumbnail URL or set default thumbnail
- */
-function revenudebase_get_thumbnail_url( $post_id, $thumb_size = 'small' ) {
-	$post_thumbnail_url = null;
-	if ( has_post_thumbnail( $post->id )) {
-		$post_thumbnail_url = wp_get_attachment_url( get_post_thumbnail_id( $post->id ) );
-		// $post_thumbnail_url = wp_get_attachment_thumb_url( $post->id );
-	} else {
-		$post_thumbnail_url = get_template_directory_uri() . '/images/thumb_placeholder.png';
-	}
-	return $post_thumbnail_url;
-}
-
-
-/*
  * Return pagination links (FIXME! to be tested!)
  */
 function revenudebase_pagination()
