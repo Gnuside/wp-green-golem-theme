@@ -42,40 +42,5 @@
       <script src='http://s7.addthis.com/js/250/addthis_widget.js' type='text/javascript'></script>
     </div>
   </div>
-<?php comments_template(); ?>
-<ul id='page-list'>
-  <li>
-    <a class='begin' href='#'>|&lt;</a>
-  </li>
-  <li>
-    <a class='prev' href='#'>&lt;&lt;</a>
-  </li>
-  <li>
-    <a class='active' href='#'>1</a>
-  </li>
-  <li>
-    <a href='#'>2</a>
-  </li>
-  <li>
-    <a href='#'>3</a>
-  </li>
-  <li>
-    <a class='empty' href='#'>...</a>
-  </li>
-  <li>
-    <a href='#'>40</a>
-  </li>
-  <li>
-    <a href='#'>41</a>
-  </li>
-  <li>
-    <a href='#'>42</a>
-  </li>
-  <li>
-    <a class='next' href='#'>&gt;&gt;</a>
-  </li>
-  <li>
-    <a class='end' href='#'>&gt;|</a>
-  </li>
-</ul>
+  <?php comments_template(); ?>
 </article>

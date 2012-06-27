@@ -1,15 +1,19 @@
 <?php if ( have_comments() ) : ?>
-<div id='comment-list'>
-	<h3>Commentaires</h3>
+	<div id='comment-list'>
+		<h3>Commentaires</h3>
+		<?php wp_list_comments(array( 'callback' => 'revenudebase_comment' )); ?>
+	</div>
 	<?php
-		wp_list_comments(array(
-			'callback' => 'revenudebase_comment',
-			'reverse_top_level' => TRUE
-		));
+		if ( 1 < get_comment_pages_count() && get_option( 'page_comments' ) ) {
+			paginate_comments_links(array(
+				'next_text' => '&gt;&gt;',
+				'prev_text' => '&lt;&lt;',
+				'type' => 'list'
+			));
+		}
 	?>
-</div>
 <?php endif; ?>
-<?php if ('open' == $post->comment_status) : ?>
+<?php if ( comments_open() ) : ?>
 <div id="comment-write">
 	<h3>Rédiger un commentaire</h3>
 	<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
