@@ -7,8 +7,7 @@
 ?>
   <aside class='author'>
     <div class='thumbnail right'>
-		<!-- FIXME: avatar not working -->
-		<?php get_avatar( get_the_author_meta( 'user_email' )); ?>
+		<?php echo get_avatar( get_the_author_meta( 'ID' )); ?>
     </div>
 	<div class='name'><?php the_author(); ?></div>
     <div class='bio'><?php the_author_meta( 'description' ); ?></div>
