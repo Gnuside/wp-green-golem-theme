@@ -5,7 +5,7 @@
 	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
     <meta content='Revenu De Base - Javascript &amp; JQuery' name='description' />
     <meta content='Gnuside' name='author' />
-    <link href='//fonts.googleapis.com/css?family=Sonsie+One:400|Parisienne:400|Karla:700,400|Dosis:400,500,600,700' rel='stylesheet' type='text/css' />
+    <link href='//fonts.googleapis.com/css?family=Concert+One:400,700|Parisienne:400|Karla:700,400|Dosis:400,500,600,700' rel='stylesheet' type='text/css' />
     <link href='<?php echo get_template_directory_uri(); ?>/css/blueprint/screen.css' media='screen, projection' rel='stylesheet' />
     <!--[if IE]>
       <link href='<?php echo get_template_directory_uri(); ?>/css/blueprint/ie.css' media='screen, projection' rel='stylesheet' />
