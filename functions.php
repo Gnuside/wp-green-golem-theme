@@ -11,6 +11,7 @@ if ( ! function_exists( 'revenudebase_setup' ) ) {
 
 		// This theme uses Featured Images for per-post/per-page Custom Header images
 		add_theme_support( 'post-thumbnails' );
+		set_post_thumbnail_size( 210 );
 	}
 }
 
