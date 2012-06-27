@@ -97,4 +97,23 @@ if ( !function_exists( 'revenudebase_excerpt_length' ) ) {
 		return 45;
 	}
 }
+
+/**
+ * Template for comments
+ */
+if ( !function_exists( 'revenudebase_comment' ) ) :
+	function revenudebase_comment( $comment, $args, $depth ) {
+		$GLOBALS['comment'] = $comment;
 ?>
+	<div class='comment'>
+		<div class='info'>
+		<div class='username'><?php comment_author(); ?></div>
+		<div class='creation-date'><?php echo sprintf('%1$s à %2$s', get_comment_date(), get_comment_time('H:i')); ?></div>
+		</div>
+		<div class='text'>
+			<?php comment_text(); ?>
+		</div>
+	</div>
+<?php
+	}
+endif;

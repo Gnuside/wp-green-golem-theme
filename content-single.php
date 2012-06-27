@@ -42,63 +42,7 @@
       <script src='http://s7.addthis.com/js/250/addthis_widget.js' type='text/javascript'></script>
     </div>
   </div>
-  <div id='comment-write'>
-  <h3>
-    Rédiger un commentaire
-  </h3>
-  <form>
-    <label>Nom ou pseudo&nbsp;:</label>
-    <input name='name' placeholder='Nom ou pseudo' type='text' />
-    <label>Adresse email&nbsp;:</label>
-    <input name='email' placeholder='Adresse email' type='text' />
-    <label>Site web (facultatif)&nbsp;:</label>
-    <input name='website' placeholder='Site web' type='text' />
-    <label>Commentaire&nbsp;:</label>
-    <textarea name='comment'></textarea>
-    <label>&nbsp;</label>
-    <input name='submit' type='submit' value='Envoyer' />
-  </form>
-</div>
-<div id='comment-list'>
-  <h3>Commentaires</h3>
-  <div class='comment'>
-    <div class='info'>
-      <div class='username'>Bob</div>
-      <div class='creation-date'>Aujourd'hui à 16:00</div>
-    </div>
-    <div class='text'>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit ...
-    </div>
-  </div>
-  <div class='comment'>
-    <div class='info'>
-      <div class='username'>Alice</div>
-      <div class='creation-date'>Hier à 22:00</div>
-    </div>
-    <div class='text'>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit ?
-    </div>
-  </div>
-  <div class='comment'>
-    <div class='info'>
-      <div class='username'>Charlie</div>
-      <div class='creation-date'>Lundi 20 mai 2012 à 23:45</div>
-    </div>
-    <div class='text'>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-      sed ipsum dolor sit amet, consectetur adipisicing elit ...
-    </div>
-  </div>
-  <div class='comment'>
-    <div class='info'>
-      <div class='username'>Alice</div>
-      <div class='creation-date'>Dimanche 19 mai 2012 à 13:37</div>
-    </div>
-    <div class='text'>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit ?
-    </div>
-  </div>
-</div>
+<?php comments_template(); ?>
 <ul id='page-list'>
   <li>
     <a class='begin' href='#'>|&lt;</a>
