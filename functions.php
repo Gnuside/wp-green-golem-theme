@@ -41,7 +41,7 @@ if ( ! function_exists( 'revenudebase_init_menus' ) ) {
 }
 
 
-/* 
+/*
  * Retrieve thumbnail URL or set default thumbnail
  */
 function revenudebase_get_thumbnail_url( $post_id, $thumb_size = 'small' ) {
@@ -56,7 +56,7 @@ function revenudebase_get_thumbnail_url( $post_id, $thumb_size = 'small' ) {
 }
 
 
-/* 
+/*
  * Return pagination links (FIXME! to be tested!)
  */
 function revenudebase_pagination()
@@ -102,4 +102,13 @@ function wp_nav_menu_title( $theme_location ) {
 	echo apply_filters( 'wp_nav_menu_title', $title, $theme_location );
 }
 
+/**
+ * Excerpt length
+ */
+add_filter( 'excerpt_length', 'revenudebase_excerpt_length' );
+if ( !function_exists( 'revenudebase_excerpt_length' ) ) {
+	function revenudebase_excerpt_length ( $length ) {
+		return 45;
+	}
+}
 ?>
