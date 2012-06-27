@@ -2,7 +2,7 @@
 <article id='article-full' class="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 
   <!-- / author box -->
-<?php if ( get_the_author_meta( 'description' )) : 
+<?php if ( get_the_author_meta( 'description' )) :
 // If a user has filled out their description
 ?>
   <aside class='author'>
@@ -22,7 +22,7 @@
     </span>
 	 <?php if ( 'post' == get_post_type() ) : ?>
     <span class='creation-date'>
-	FIXME
+	<?php the_date(); ?>
           </span><!-- .creation-date -->
           <?php endif; ?>
   </h2>
