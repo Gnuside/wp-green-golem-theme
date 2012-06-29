@@ -44,18 +44,13 @@ $column_left_catid ); ?>'> -->
   </header>
 
   <section>
-
-	<?php $post = $top_featured_post ; setup_postdata($post); ?>
-	<article class='span-11 extended emphasis first halfcolborder'>
-	  <?php echo get_the_post_thumbnail($post->ID, array(450,450)); ?>
-	  <header>
-		<p class='context'><?php echo get_the_date(); ?></p>
-		<h3 class='context'><?php the_title(); ?></h3>
-	  </header>
-	  <section>
-		<p><?php the_excerpt(); ?></p>
-	  </section>
-	</article>
+	<?php $post = $top_featured_post ; setup_postdata($post); 
+		$format = get_post_format( $post->ID );
+		if ( "" == $format ) {
+			$format = "emphasis-first";
+		}
+		get_template_part( 'content', $format );
+	?>
 
 	<section class='span-5 extended last'>
 	<?php
