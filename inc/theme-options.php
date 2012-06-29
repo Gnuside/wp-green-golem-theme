@@ -20,10 +20,10 @@ function revenudebase_admin_init() {
 
 function revenudebase_admin_menu() {
 	add_theme_page(
-		__( 'RevenuDeBase Options', 'revenudebase'), // page title
-		__('RevenuDeBase Options', 'revenudebase'), // menu title
+		__( 'Theme Options', 'revenudebase'), // page title
+		__('Theme Options', 'revenudebase'), // menu title
 		'edit_theme_options',  // capability
-		'theme_options', // menu slug (FIXME: what is that?)
+		'theme_options', // menu slug
 		'revenudebase_option_page' // callback function
 	);
 }
