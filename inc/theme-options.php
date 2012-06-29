@@ -2,6 +2,12 @@
 
 add_action('admin_init', 'revenudebase_admin_init');
 add_action('admin_menu', 'revenudebase_admin_menu');
+add_action('admin_head', 'admin_register_head');
+
+function admin_register_head() { 
+	$url = get_bloginfo('template_directory') . '/inc/theme-options.css';  
+	echo "<link rel='stylesheet' href='$url' />\n";
+}
 
 $categories = array();
 
@@ -44,16 +50,30 @@ function revenudebase_option_page() {
 	</div>
 	<?php endif; ?>
 
-	 <h3>Homepage Categories</h3>
 	 <form method="post" action="options.php">
 		<?php
 		settings_fields( 'revenudebase_options' );
 		$options = get_option( 'revenudebase_options_prefix' );
 		?>
-		<p>Debug:
-		<pre><code>
-		<?php print_r($options); ?>
-		</code></pre>
+		<div class="debug">
+		<h3 >Debug (FIXME: hide this code in final release)</h3>
+		<pre><code><?php print_r($options); ?></code></pre>
+		</div>
+
+		<h3>Social media</h3>
+		<label>Twitter URL</label>
+		<input type="text" name="revenudebase_options_prefix[layout_social_twitter]" value="<?php echo $options['layout_social_twitter']; ?>"/>
+		<br/>
+
+		<label>Facebook URL</label>
+		<input type="text" name="revenudebase_options_prefix[layout_social_facebook]" value="<?php echo $options['layout_social_facebook']; ?>"/>
+		<br/>
+
+		<label>Google+ URL</label>
+		<input type="text" name="revenudebase_options_prefix[layout_social_googleplus]" value="<?php echo $options['layout_social_googleplus']; ?>"/>
+		<br/>
+
+		<h3>Homepage Categories</h3>
 		</p>
 		<label>Left column</label>
 		<?php wp_dropdown_categories( array(
