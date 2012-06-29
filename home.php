@@ -4,9 +4,6 @@
 
 $options = get_option( 'revenudebase_options_prefix' );
 
-// FIXME: get featured posts
-// $column_featured_posts = get_posts( array() );
-
 $column_featured_posts = query_posts( array(
 	'meta_key' => 'is_featured',
 	'meta_value' =>  'yes',
