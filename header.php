@@ -1,3 +1,4 @@
+<?php $options = get_option( 'revenudebase_options_prefix' ); ?>
 <!DOCTYPE html>
 <html lang='en'>
   <head>
@@ -47,23 +48,29 @@
             si votre revenu était garanti ?
           </div>
         <div class='socialmedia'>
+<?php if (!empty($options['layout_social_facebook'])): ?>
           <div class='social'>
-            <a href='#'>
+		  <a href='<?php echo $options['layout_social_facebook']; ?>'>
               <img src='<?php echo get_template_directory_uri(); ?>/images/facebook.png' />
             </a>
           </div>
+<?php endif; ?>
+<?php if (!empty($options['layout_social_twitter'])): ?>
           <div class='social'>
-            <a href='#'>
+            <a href='<?php echo $options['layout_social_twitter']; ?>'>
               <img src='<?php echo get_template_directory_uri(); ?>/images/twitter.png' />
             </a>
           </div>
+<?php endif; ?>
+<?php if (!empty($options['layout_social_googleplus'])): ?>
           <div class='social'>
-            <a href='#'>
+            <a href='<?php echo $options['layout_social_googleplus']; ?>'>
               <img src='<?php echo get_template_directory_uri(); ?>/images/googleplus.png' />
             </a>
           </div>
+<?php endif; ?>
           <div class='social'>
-            <a href='#'>
+			  <a href='<?php bloginfo('rss2_url'); ?>'>
               <img src='<?php echo get_template_directory_uri(); ?>/images/rss.png' />
             </a>
           </div>
