@@ -56,7 +56,7 @@ function revenudebase_option_page() {
 		$options = get_option( 'revenudebase_options_prefix' );
 		?>
 		<div class="debug">
-		<h3 >Debug (FIXME: hide this code in final release)</h3>
+		<h3 >Debug</h3>
 		<pre><code><?php print_r($options); ?></code></pre>
 		</div>
 
