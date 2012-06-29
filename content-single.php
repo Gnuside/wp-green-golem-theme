@@ -7,10 +7,12 @@
 ?>
   <aside class='author'>
     <div class='thumbnail right'>
+		<a href="<?php echo get_author_posts_url(); ?>">
 		<?php echo get_avatar( get_the_author_meta( 'ID' )); ?>
+		</a>
     </div>
-	<div class='name'><?php the_author(); ?></div>
-    <div class='bio'><?php the_author_meta( 'description' ); ?></div>
+	<div class='name'><a href="<?php echo get_author_posts_url(); ?>"><?php the_author(); ?></a></div>
+    <div class='bio'><a href="<?php echo get_author_posts_url(); ?>"><?php the_author_meta( 'description' ); ?></a></div>
   </aside>
 <?php endif; ?>
   <!-- / article title -->
