@@ -47,7 +47,7 @@
         </div>
         <div class='credits'>
           Revenu de Base est propulsé par
-          <a href='FIXME'>Wordpress</a>
+          <a href='http://wordpress.org'>Wordpress</a>
           sur un thème de
           <a href=''>Gnuside</a>
           et un design de
