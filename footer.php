@@ -1,8 +1,6 @@
 	</div>
 	<aside id='widgets'>
-		<form>
-		  <input class='search' placeholder='Recherche' type='text' />
-		</form>
+		<?php get_search_form( true ); ?>
 		<div class='prepend-top'>
 		  <a class='newsletter' href='#'>
 			<img src='<?php echo get_template_directory_uri(); ?>/images/newsletter.png' />
