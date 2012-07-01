@@ -32,7 +32,7 @@
           <?php endif; ?>
   </h2>
   <hr style='clear:both; visibility:hidden' />
-  <img align='right' class='right last' src='<?php echo get_the_post_thumbnail($post->ID, array(450,450)); ?>' width='450px' />
+  <?php echo get_the_post_thumbnail($post->ID, array(450,450), array('class'=>'right last')); ?>
 
 <?php the_content(); ?>
 
