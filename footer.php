@@ -8,10 +8,10 @@
 		  </a>
 		</div>
 		<div class='prepend-top'>
-		  <div class='fb-like-box' data-header='true' data-href='http://www.facebook.com/RevenudeBase' data-show-faces='true' data-stream=  'false' data-width='210'></div>
+		  <div class='fb-like-box' data-header='true' data-href='<?php echo $options['layout_social_facebook']; ?>' data-show-faces='true' data-stream=  'false' data-width='210'></div>
 		</div>
 		<div class='prepend-top'>
-		  <a class='twitter-follow-button' data-lang='fr' data-show-count='false' data-size='large' href='https://twitter.com/revenudebase  '>Suivre @revenudebase</a>
+		  <a class='twitter-follow-button' data-lang='fr' data-show-count='false' data-size='large' href='<?php echo $options['layout_social_twitter']; ?>'>Suivre @revenuDeBaseFr</a>
 		</div>
 		<div class='prepend-top' id='twitter-widget'></div>
 	  </aside>
