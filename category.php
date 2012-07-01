@@ -10,7 +10,7 @@ $category->cat_ID ); ?>'>
   </a>
 </header>
 
-<!--FIXME: insérer la liste des pages -->
+<!-- liste des pages -->
 <?php revenudebase_pagination(); ?>
 
 <?php if (!empty($category->description)) {
@@ -34,7 +34,7 @@ if(have_posts()) {
 Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.
 <?php } ?>
 
-<!--FIXME: insérer la liste des pages -->
+<!-- liste des pages -->
 <?php revenudebase_pagination(); ?>
 
 </section> <!-- #article-list -->
