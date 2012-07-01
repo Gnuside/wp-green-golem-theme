@@ -1,33 +1,41 @@
 <?php get_header(); ?>
 
-<section id='article-list'>                                                                                   
+<section id='article-list'>
+<header class='heading yellow'>
+<?php $category = get_category(get_query_var('cat'),false); ?>
+  <h2><?php echo $category->name;  ?></h2>
+  <a class='feed' href='<?php echo get_category_feed_link( 
+$category->cat_ID ); ?>'>
+  <img src='<?php echo get_template_directory_uri(); ?>/images/rss-black.png' />
+  </a>
+</header>
 
-<header class='heading yellow'>                                                                                       
-  <!-- FIXME: get search title ... -->
-  <h2><?php single_cat_title(); ?></h2>                                                                                                 
-  <!-- FIXME: verify the feed is valid for all searches -->
-  <a class='feed' href='<?php echo get_category_feed_link( ); ?>'>                                                                                           
-  <img src='<?php echo get_template_directory_uri(); ?>/images/rss-black.png' />                                                                                
-  </a>                                                                                                                
-</header> 
+<!-- liste des pages -->
+<?php revenudebase_pagination(); ?>
 
+<?php if (!empty($category->description)) {
+	echo "<div class='description'>"
+		.  category_description( $category->cat_ID )
+		. "</div>";
+	echo "<hr/>";
+} ?>
 
-<!--FIXME: insérer la liste des pages -->
-
-<?php 
+<?php
 if(have_posts()) {
-	while(have_posts()) { 
-		the_post(); 
-		echo get_post_format();
-		get_template_part( 'content', get_post_format() ); 
+	while(have_posts()) {
+		the_post();
+		$format = get_post_format( $post->ID );
+		if ( "" == $format ) {
+			$format = "archive";
+		}
+		get_template_part( 'content', $format );
 	}
-} else {
-	echo "Apologies, but no results were found for the requested archive. Perhaps searching will help find a rel  ated post.";
-}
-?>
+} else { ?>
+Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.
+<?php } ?>
 
-
-<!--FIXME: insérer la liste des pages -->
+<!-- liste des pages -->
+<?php revenudebase_pagination(); ?>
 
 </section> <!-- #article-list -->
 
