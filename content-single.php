@@ -32,7 +32,7 @@
           <?php endif; ?>
   </h2>
   <hr style='clear:both; visibility:hidden' />
-  <img align='right' class='right last' height='200' src='http://www.mutinerie.org/wp-content/uploads/2012/02/Fernand_Leger.jpg' width='450px' />
+  <img align='right' class='right last' src='<?php echo get_the_post_thumbnail($post->ID, array(450,450)); ?>' width='450px' />
 
 <?php the_content(); ?>
 
