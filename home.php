@@ -7,7 +7,7 @@ $options = get_option( 'revenudebase_options_prefix' );
 $column_featured_posts = query_posts( array(
 	'meta_key' => 'is_featured',
 	'meta_value' =>  'yes',
-	'numberposts' => 5
+	'numberposts' => 3
 ));
 $top_featured_post = array_pop( $column_featured_posts );
 
