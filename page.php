@@ -2,6 +2,7 @@
 
 <?php while ( have_posts() ) : the_post(); ?>
 
+PAGE
 	<?php get_template_part( 'content', 'page' ); ?>
 
 <?php endwhile; // end of the loop. ?>
