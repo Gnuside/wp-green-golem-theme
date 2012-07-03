@@ -7,9 +7,9 @@ $options = get_option( 'revenudebase_options_prefix' );
 $column_featured_posts = query_posts( array(
 	'meta_key' => 'is_featured',
 	'meta_value' =>  'yes',
-	'numberposts' => 3
+	'numberposts' => 4
 ));
-$top_featured_post = array_pop( $column_featured_posts );
+//$top_featured_post = array_pop( $column_featured_posts );
 
 $column_left_catid = $options['homepage_cat_left'];
 $column_left_catname = get_the_category_by_ID( $column_left_catid );
@@ -43,14 +43,22 @@ $column_left_catid ); ?>'> -->
 	</a>
   </header>
 
-  <section>
-	<?php $post = $top_featured_post ; setup_postdata($post); 
+  <section class="span-11 extended first halfcolborder">
+	<?php 
+	$column_top_posts = array();
+	array_push($column_top_posts, array_pop( $column_featured_posts));
+	array_push($column_top_posts, array_pop( $column_featured_posts));
+
+	foreach( $column_top_posts as $post ){
+		setup_postdata($post); 
 		$format = get_post_format( $post->ID );
 		if ( "" == $format ) {
 			$format = "emphasis-first";
 		}
 		get_template_part( 'content', $format );
+	}
 	?>
+</section>
 
 	<section class='span-5 extended last'>
 	<?php
@@ -63,7 +71,6 @@ $column_left_catid ); ?>'> -->
 		get_template_part( 'content', $format );
 	}
 	?>
-	</section>
   </section>
 </section>
 

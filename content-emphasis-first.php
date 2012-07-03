@@ -1,4 +1,5 @@
-<article id="post-<?php echo $post->ID; ?>" class='span-11 extended emphasis first halfcolborder'>
+<article id="post-<?php echo $post->ID; ?>" class='emphasis'>
+<!-- <article id="post-<?php echo $post->ID; ?>" class='span-11 extended emphasis first halfcolborder'> -->
 	<aside>
 	  <?php echo get_the_post_thumbnail($post->ID, array(450,450)); ?>
 	</aside>
