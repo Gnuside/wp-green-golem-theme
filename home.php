@@ -8,6 +8,7 @@ $options = get_option( 'revenudebase_options_prefix' );
 $column_featured_posts = query_posts( array(
 	'meta_key' => 'is_featured',
 	'meta_value' =>  'yes',
+	'orderby' => 'date',
 	'numberposts' => 4
 ));
 
@@ -15,6 +16,7 @@ $column_left_catid = $options['homepage_cat_left'];
 $column_left_catname = get_the_category_by_ID( $column_left_catid );
 $column_left_posts = get_posts( array(
 	'category' => $column_left_catid,
+	'orderby' => 'date',
 	'numberposts' => 3
 ) );
 
@@ -22,6 +24,7 @@ $column_center_catid = $options['homepage_cat_center'];
 $column_center_catname = get_the_category_by_ID( $column_center_catid );
 $column_center_posts = get_posts( array(
 	'category' => $column_center_catid,
+	'orderby' => 'date',
 	'numberposts' => 3
 ) );
 
@@ -29,6 +32,7 @@ $column_right_catid = $options['homepage_cat_right'];
 $column_right_catname = get_the_category_by_ID( $column_right_catid );
 $column_right_posts = get_posts( array(
 	'category' => $column_right_catid,
+	'orderby' => 'date',
 	'numberposts' => 3
 ) );
 
