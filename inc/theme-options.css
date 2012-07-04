@@ -7,3 +7,8 @@
     visibility: hidden;
     display: none;
 }
+
+.example {
+    font-size: 80%;
+    color: #aaa;
+}

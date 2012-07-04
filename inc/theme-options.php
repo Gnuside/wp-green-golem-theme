@@ -59,14 +59,16 @@ function revenudebase_option_page() {
 		<h3 >Debug</h3>
 		<pre><code><?php print_r($options); ?></code></pre>
 		</div>
+		<?php echo revenudebase_twitter_username(); ?>
 
 		<h3>Social media</h3>
-		<label>Twitter URL</label>
+		<label>Twitter URL </label>
 		<input type="text" name="revenudebase_options_prefix[layout_social_twitter]" value="<?php echo $options['layout_social_twitter']; ?>"/>
-		<br/>
+		<span class="example">(ex: http://twitter.com/username)</span><br/>
 
-		<label>Facebook URL</label>
+		<label>Facebook URL </label>
 		<input type="text" name="revenudebase_options_prefix[layout_social_facebook]" value="<?php echo $options['layout_social_facebook']; ?>"/>
+		<span class="example">(ex: http://facebook.com/pagename)</span>
 		<br/>
 
 		<label>Google+ URL</label>
