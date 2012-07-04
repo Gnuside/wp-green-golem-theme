@@ -1,10 +1,7 @@
 
 <article id='article-full' class="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 
-  <!-- / author box -->
-<?php if ( get_the_author_meta( 'description' )) :
-// If a user has filled out their description
-?>
+<!-- / author box -->
   <aside class='author'>
     <div class='thumbnail right'>
 		<a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
@@ -14,11 +11,14 @@
 	<div class='name'>
 		<a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a>
 	</div>
+<?php if ( get_the_author_meta( 'description' )) :
+// If a user has filled out their description
+?>
 	<div class='bio'>
 		<a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author_meta( 'description' ); ?></a>
 	</div>
-  </aside>
 <?php endif; ?>
+  </aside>
   <!-- / article title -->
   <h2>
     <span class='title'><?php the_title(); ?></span>
