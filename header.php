@@ -1,6 +1,6 @@
 <?php $options = get_option( 'revenudebase_options_prefix' ); ?>
 <!DOCTYPE html>
-<html lang='en'>
+<html <?php language_attributes(); ?>>
   <head>
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
