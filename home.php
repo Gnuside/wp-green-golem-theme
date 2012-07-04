@@ -54,8 +54,8 @@ $column_left_catid ); ?>'> -->
   <section class="span-11 extended first halfcolborder">
 	<?php 
 	$column_top_posts = array();
-	array_push($column_top_posts, array_pop( $column_featured_posts));
-	array_push($column_top_posts, array_pop( $column_featured_posts));
+	array_push($column_top_posts, array_shift( $column_featured_posts));
+	array_push($column_top_posts, array_shift( $column_featured_posts));
 
 	foreach( $column_top_posts as $post ){
 		setup_postdata($post); 
