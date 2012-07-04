@@ -32,9 +32,6 @@
 		?>
 	</title>
 
-	<meta property="og:title" content="<?php echo $title; ?>" />
-	<meta property="og:description" content="description" />
-	<meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/images/logo.png" />
 
 	<?php wp_head(); ?>
   </head>
