@@ -1,7 +1,7 @@
 <article id="post-<?php echo $post->ID; ?>" class='emphasis'>
 <!-- <article id="post-<?php echo $post->ID; ?>" class='span-11 extended emphasis first halfcolborder'> -->
 	<aside>
-	  <?php echo get_the_post_thumbnail($post->ID, array(450,450)); ?>
+		<a href='<?php echo post_permalink($post->ID); ?>'><?php echo get_the_post_thumbnail($post->ID, array(450,450)); ?></a>
 	</aside>
 	  <header>
 		<p class='context'><?php echo get_the_date(); ?></p>
