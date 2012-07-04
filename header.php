@@ -20,15 +20,21 @@
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 	<title>
-		<?php bloginfo('name') ?>
-		<?php if ( is_404() ) : ?>
-			&raquo; <?php _e('Not Found') ?>
-		<?php elseif ( is_home() ) : ?>
-			&raquo; <?php bloginfo('description') ?>
-		<?php else : ?>
-			<?php wp_title() ?>
-		<?php endif ?>
+		<?php 
+		$title = bloginfo('name');
+		if ( is_404() ){ 
+			$title .= "&raquo;" .  _e('Not Found');
+		} elseif ( is_home() ) {
+			$title .= "&raquo;" . bloginfo('description');
+		} else {
+			$title .= wp_title();
+		}
+		?>
 	</title>
+
+	<meta property="og:title" content="<?php echo $title; ?>" />
+	<meta property="og:description" content="description" />
+	<meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/images/logo.png" />
 
 	<?php wp_head(); ?>
   </head>
