@@ -2,6 +2,7 @@
 
 <?php
 
+$post_memory = array();
 $options = get_option( 'revenudebase_options_prefix' );
 
 $column_featured_posts = query_posts( array(
@@ -9,7 +10,6 @@ $column_featured_posts = query_posts( array(
 	'meta_value' =>  'yes',
 	'numberposts' => 4
 ));
-//$top_featured_post = array_pop( $column_featured_posts );
 
 $column_left_catid = $options['homepage_cat_left'];
 $column_left_catname = get_the_category_by_ID( $column_left_catid );
@@ -51,6 +51,11 @@ $column_left_catid ); ?>'> -->
 
 	foreach( $column_top_posts as $post ){
 		setup_postdata($post); 
+
+		// skip already matched posts
+		if (in_array($post_memory, $post->ID)) { continue; };
+		array_push($post_memory, $post->ID);
+
 		$format = get_post_format( $post->ID );
 		if ( "" == $format ) {
 			$format = "emphasis-first";
@@ -64,6 +69,11 @@ $column_left_catid ); ?>'> -->
 	<?php
 	foreach( $column_featured_posts as $post ){
 		setup_postdata($post);
+
+		// skip already matched posts
+		if (in_array($post_memory, $post->ID)) { continue; };
+		array_push($post_memory, $post->ID);
+
 		$format = get_post_format( $post->ID );
 		if ( "" == $format ) {
 			$format = "emphasis";
@@ -87,6 +97,11 @@ $column_left_catid ); ?>'>
 <?php
 foreach( $column_left_posts as $post ){
 	setup_postdata($post);
+
+	// skip already matched posts
+	if (in_array($post_memory, $post->ID)) { continue; };
+	array_push($post_memory, $post->ID);
+
 	$format = get_post_format( $post->ID );
 	if ( "" == $format ) {
 		$format = "emphasis";
@@ -115,6 +130,11 @@ $column_center_catid ); ?>'>
 <?php
 foreach( $column_center_posts as $post ){
 	setup_postdata($post);
+
+	// skip already matched posts
+	if (in_array($post_memory, $post->ID)) { continue; };
+	array_push($post_memory, $post->ID);
+
 	$format = get_post_format( $post->ID );
 	if ( "" == $format ) {
 		$format = "emphasis";
@@ -142,6 +162,11 @@ $column_right_catid ); ?>'>
 <?php
 foreach( $column_right_posts as $post ){
 	setup_postdata($post);
+
+	// skip already matched posts
+	if (in_array($post_memory, $post->ID)) { continue; };
+	array_push($post_memory, $post->ID);
+
 	$format = get_post_format( $post->ID );
 	if ( "" == $format ) {
 		$format = "emphasis";
