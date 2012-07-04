@@ -59,7 +59,6 @@ function revenudebase_option_page() {
 		<h3 >Debug</h3>
 		<pre><code><?php print_r($options); ?></code></pre>
 		</div>
-		<?php echo revenudebase_twitter_username(); ?>
 
 		<h3>Social media</h3>
 		<label>Twitter URL </label>

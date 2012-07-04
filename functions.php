@@ -125,3 +125,13 @@ if ( !function_exists( 'revenudebase_comment' ) ) :
 <?php
 	}
 endif;
+
+
+if ( !function_exists( 'revenudebase_twitter_username' ) ) :
+	function revenudebase_twitter_username() {
+		$options = get_option( 'revenudebase_options_prefix' );
+		preg_match('|^(http://)?twitter.com/(?P<username>[^/]*).*|', $options['layout_social_twitter'], $twinfo);
+		$twusername = $twinfo['username'];
+		return $twusername;
+	}
+endif;
