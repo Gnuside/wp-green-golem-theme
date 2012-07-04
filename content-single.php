@@ -14,7 +14,7 @@
           <?php endif; ?>
   </h2>
   <hr style='clear:both; visibility:hidden' />
-  <?php echo get_the_post_thumbnail($post->ID, array(450,450), array('class'=>'right last')); ?>
+  <?php echo get_the_post_thumbnail($post->ID, array(375,375), array('class'=>'right last')); ?>
 
 <?php the_content(); ?>
 
