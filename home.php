@@ -2,7 +2,7 @@
 
 <?php
 
-$post_memory = array();
+$postid_memory = array();
 $options = get_option( 'revenudebase_options_prefix' );
 
 $column_featured_posts = query_posts( array(
@@ -57,8 +57,8 @@ $column_left_catid ); ?>'> -->
 		setup_postdata($post); 
 
 		// skip already matched posts
-		if (in_array($post_memory, $post->ID)) { continue; };
-		array_push($post_memory, $post->ID);
+		if (in_array($post->ID, $postid_memory)) { continue; };
+		array_push($postid_memory, $post->ID);
 
 		$format = get_post_format( $post->ID );
 		if ( "" == $format ) {
@@ -75,8 +75,8 @@ $column_left_catid ); ?>'> -->
 		setup_postdata($post);
 
 		// skip already matched posts
-		if (in_array($post_memory, $post->ID)) { continue; };
-		array_push($post_memory, $post->ID);
+		if (in_array($post->ID, $postid_memory)) { continue; };
+		array_push($postid_memory, $post->ID);
 
 		$format = get_post_format( $post->ID );
 		if ( "" == $format ) {
@@ -103,8 +103,8 @@ foreach( $column_left_posts as $post ){
 	setup_postdata($post);
 
 	// skip already matched posts
-	if (in_array($post_memory, $post->ID)) { continue; };
-	array_push($post_memory, $post->ID);
+	if (in_array($post->ID, $postid_memory)) { continue; };
+	array_push($postid_memory, $post->ID);
 
 	$format = get_post_format( $post->ID );
 	if ( "" == $format ) {
@@ -136,8 +136,8 @@ foreach( $column_center_posts as $post ){
 	setup_postdata($post);
 
 	// skip already matched posts
-	if (in_array($post_memory, $post->ID)) { continue; };
-	array_push($post_memory, $post->ID);
+	if (in_array($post->ID, $postid_memory)) { continue; };
+	array_push($postid_memory, $post->ID);
 
 	$format = get_post_format( $post->ID );
 	if ( "" == $format ) {
@@ -168,8 +168,8 @@ foreach( $column_right_posts as $post ){
 	setup_postdata($post);
 
 	// skip already matched posts
-	if (in_array($post_memory, $post->ID)) { continue; };
-	array_push($post_memory, $post->ID);
+	if (in_array($post->ID, $postid_memory)) { continue; };
+	array_push($postid_memory, $post->ID);
 
 	$format = get_post_format( $post->ID );
 	if ( "" == $format ) {
