@@ -5,39 +5,43 @@
 $postid_memory = array();
 $options = get_option( 'revenudebase_options_prefix' );
 
+$column_featured_limit = 5;
 $column_featured_posts = query_posts( array(
 	'meta_key' => 'is_featured',
 	'meta_value' =>  'yes',
 	'orderby' => 'date',
 	'order' => 'DESC',
-	'numberposts' => 5
+	'numberposts' => $column_featured_limit
 ));
 
 $column_left_catid = $options['homepage_cat_left'];
 $column_left_catname = get_the_category_by_ID( $column_left_catid );
+$column_left_limit = 3;
 $column_left_posts = get_posts( array(
 	'category' => $column_left_catid,
 	'orderby' => 'date',
 	'order' => 'DESC',
-	'numberposts' => 3
+	'numberposts' => $column_left_limit + $column_featured_limit
 ) );
 
 $column_center_catid = $options['homepage_cat_center'];
 $column_center_catname = get_the_category_by_ID( $column_center_catid );
+$column_center_limit = 3;
 $column_center_posts = get_posts( array(
 	'category' => $column_center_catid,
 	'orderby' => 'date',
 	'order' => 'DESC',
-	'numberposts' => 3
+	'numberposts' => $column_featured_limit + $column_left_limit + $column_center_limit
 ) );
 
 $column_right_catid = $options['homepage_cat_right'];
 $column_right_catname = get_the_category_by_ID( $column_right_catid );
+$column_right_limit = 3;
 $column_right_posts = get_posts( array(
 	'category' => $column_right_catid,
 	'orderby' => 'date',
 	'order' => 'DESC',
-	'numberposts' => 3
+	'numberposts' => $column_featured_limit + $column_left_limit + $column_center_limit + $column_right_limit
 ) );
 
 ?>
@@ -102,12 +106,16 @@ $column_left_catid ); ?>'>
 	</header>
 
 <?php
+$limit = 0;
 foreach( $column_left_posts as $post ){
 	setup_postdata($post);
 
 	// skip already matched posts
 	if (in_array($post->ID, $postid_memory)) { continue; };
 	array_push($postid_memory, $post->ID);
+
+	if ($limit >= $column_left_limit) { break; }
+	$limit++;
 
 	$format = get_post_format( $post->ID );
 	if ( "" == $format ) {
@@ -135,12 +143,16 @@ $column_center_catid ); ?>'>
 	</header>
 
 <?php
+$limit = 0;
 foreach( $column_center_posts as $post ){
 	setup_postdata($post);
 
 	// skip already matched posts
 	if (in_array($post->ID, $postid_memory)) { continue; };
 	array_push($postid_memory, $post->ID);
+
+	if ($limit >= $column_center_limit) { break; }
+	$limit++;
 
 	$format = get_post_format( $post->ID );
 	if ( "" == $format ) {
@@ -167,12 +179,16 @@ $column_right_catid ); ?>'>
 	</header>
 
 <?php
+$limit = 0;
 foreach( $column_right_posts as $post ){
 	setup_postdata($post);
 
 	// skip already matched posts
 	if (in_array($post->ID, $postid_memory)) { continue; };
 	array_push($postid_memory, $post->ID);
+
+	if ($limit >= $column_right_limit) { break; }
+	$limit++;
 
 	$format = get_post_format( $post->ID );
 	if ( "" == $format ) {
