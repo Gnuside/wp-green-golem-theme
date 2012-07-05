@@ -10,7 +10,7 @@ $column_featured_posts = query_posts( array(
 	'meta_value' =>  'yes',
 	'orderby' => 'date',
 	'order' => 'DESC',
-	'numberposts' => 4
+	'numberposts' => 5
 ));
 
 $column_left_catid = $options['homepage_cat_left'];
