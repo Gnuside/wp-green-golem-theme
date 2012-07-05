@@ -106,6 +106,17 @@ function revenudebase_option_page() {
 		)); ?>
 		<br/>
 
+		<h3>Events</h3>
+		<label>The category event will be merged into</label>
+		<?php wp_dropdown_categories( array(
+			'name' => 'revenudebase_options_prefix[event_category_id]',
+			'selected'  => $options['event_category_id'],
+			'hide_empty' => 0,
+			'show_count' => 1,
+			'hierarchical' => 1
+		)); ?>
+		<br/>
+
 		<p class="submit">
 			<input type="submit" class="button-primary" value="  <?php _e( 'Save Options', 'sampletheme' ); ?>" />
 		</p>
