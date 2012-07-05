@@ -21,7 +21,7 @@
 	<h2 class='title'>
 		<a href="<?php echo post_permalink( $post->ID ); ?>"><?php the_title(); ?></a>
 	</h2>
-	 <span class='category'><?php the_category(',','single'); ?></span>
+	 <span class='category'><?php the_category(', ','single'); ?></span>
 	 <span class='creation-date'><?php echo get_the_date(); ?></span>
 	 <span class='author'><?php the_author_posts_link(); ?></span>
 	</header>
