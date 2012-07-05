@@ -45,8 +45,7 @@ $column_right_posts = get_posts( array(
 <section class='span-17 extended last'>
   <header class='heading yellow'>
 	<h2>À la une</h2>
-	<!-- <a class='feed' href='<?php echo get_category_feed_link(
-$column_left_catid ); ?>'> -->
+	 <a class='feed' href='<?php bloginfo('rss2_url'); ?>'>
 	  <img src='images/rss-black.png' />
 	</a>
   </header>
