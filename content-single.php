@@ -4,9 +4,7 @@
   <!-- / article title -->
   <h2>
     <span class='title'><?php the_title(); ?></span>
-    <span class='category'>
-      Paris
-    </span>
+	 <span class='category'><?php the_category(', ','single'); ?></span>
 	 <?php if ( 'post' == get_post_type() ) : ?>
     <span class='creation-date'>
 	<?php the_date(); ?>
