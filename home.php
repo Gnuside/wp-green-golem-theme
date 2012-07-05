@@ -193,6 +193,8 @@ foreach( $column_right_posts as $post ){
 	$format = get_post_format( $post->ID );
 	if ( "" == $format ) {
 		$format = "emphasis";
+	} else {
+		echo "WANT FORMAT $format !";
 	}
 	get_template_part( 'content', $format );
 }
