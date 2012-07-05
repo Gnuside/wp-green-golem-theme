@@ -50,7 +50,7 @@ $column_right_posts = get_posts( array(
   <header class='heading yellow'>
 	<h2>À la une</h2>
 	 <a class='feed' href='<?php bloginfo('rss2_url'); ?>'>
-	  <img src='images/rss-black.png' />
+	  <img src='<?php echo get_template_directory_uri(); ?>/images/rss-black.png' />
 	</a>
   </header>
 
