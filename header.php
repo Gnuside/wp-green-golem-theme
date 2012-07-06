@@ -37,6 +37,7 @@
   </head>
 
   <body>
+	<div id="beforehead"></div>
     <div class='container'>
       <!-- / header with logo & stuff -->
 	  <header class='top-header'>
