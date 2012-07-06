@@ -91,7 +91,14 @@ $column_right_posts = get_posts( array(
 
 		$format = get_post_format( $post->ID );
 		if ( "" == $format ) {
-			$format = "emphasis";
+			$type = get_post_type( $post->ID );
+			if ( "post" == $type ) {
+				$format = "emphasis-post";
+			} else {
+				$format = "emphasis-event";
+			}
+		} else {
+			echo "WANT FORMAT $format !";
 		}
 		get_template_part( 'content', $format );
 	}
