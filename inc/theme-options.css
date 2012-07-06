@@ -4,8 +4,9 @@
     background: #ffa;
     border: 1px solid red;
     padding: 0.5rem;
+    /*
     visibility: hidden;
-    display: none;
+    display: none; */
 }
 
 .example {
