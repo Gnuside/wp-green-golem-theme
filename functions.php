@@ -23,6 +23,9 @@ if ( ! function_exists( 'revenudebase_setup' ) ) {
 
 		// also load Event Manager specific filters
 		require( get_template_directory() . '/inc/em-functions.php' );
+		// also load widgets
+		require( get_template_directory() . '/inc/widget-newsletter.php');
+
 	}
 }
 
