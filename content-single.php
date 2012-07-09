@@ -7,9 +7,12 @@
 	 <span class='category'><?php the_category(', ','single'); ?></span>
 	 <?php if ( 'post' == get_post_type() ) : ?>
     <span class='creation-date'>
-	<?php the_date(); ?>
-          </span><!-- .creation-date -->
-          <?php endif; ?>
+		<?php the_date(); ?>
+	  </span><!-- .creation-date -->
+    <span class='author'>
+		<?php the_author(); ?>
+  </span><!-- .creation-date -->
+  <?php endif; ?>
   </h2>
   <hr style='clear:both; visibility:hidden' />
   <?php echo get_the_post_thumbnail($post->ID, array(375,375), array('class'=>'right last')); ?>
