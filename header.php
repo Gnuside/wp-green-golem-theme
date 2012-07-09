@@ -27,7 +27,7 @@
 		} elseif ( is_home() ) {
 			$title .= "&raquo;" . bloginfo('description');
 		} else {
-			$title .= wp_title();
+			$title .= "&raquo;" . wp_title();
 		}
 		?>
 	</title>
