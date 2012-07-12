@@ -10,7 +10,7 @@
 		<?php the_date(); ?>
 	  </span><!-- .creation-date -->
     <span class='author'>
-		<?php the_author(); ?>
+		<a href="#author"><?php the_author(); ?></a>
   </span><!-- .creation-date -->
   <?php endif; ?>
   </h2>
@@ -25,6 +25,7 @@
 
   <!-- / author box -->
   <aside class='author'>
+	<a name="author"></a>
     <div class='thumbnail right'>
 		<a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
 		<?php echo get_avatar( get_the_author_meta( 'ID' )); ?>
