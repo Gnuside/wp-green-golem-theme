@@ -6,7 +6,7 @@ $postid_memory = array();
 $options = get_option( 'revenudebase_options_prefix' );
 
 $column_featured_limit = 5;
-$column_featured_posts = query_posts( array(
+$column_featured_posts = get_posts( array(
 	'meta_key' => 'is_featured',
 	'meta_value' =>  'yes',
 	'post_type' => array('post', 'event'),
