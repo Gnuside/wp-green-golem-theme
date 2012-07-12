@@ -6,14 +6,19 @@ $postid_memory = array();
 $options = get_option( 'revenudebase_options_prefix' );
 
 $column_featured_limit = 5;
-$column_featured_posts = get_posts( array(
-	'meta_key' => 'is_featured',
-	'meta_value' =>  'yes',
+$query = get_posts( array(
+	//'meta_query' => array(
+	//	'key' => 'featured',
+	//	'value' => 'yes'
+	//),
+	'post__in'  => get_option( 'sticky_posts' ),
 	'post_type' => array('post', 'event'),
-	'orderby' => 'date',
+	'numberposts' => $column_featured_limit,
+	'orderby' => 'post_date',
 	'order' => 'DESC',
-	'numberposts' => $column_featured_limit
 ));
+$column_featured_posts = $query;
+// print_r($column_featured_posts);
 
 $column_left_catid = $options['homepage_cat_left'];
 $column_left_catname = get_the_category_by_ID( $column_left_catid );
@@ -21,7 +26,7 @@ $column_left_limit = 3;
 $column_left_posts = get_posts( array(
 	'category' => $column_left_catid,
 	'post_type' => array('post', 'event'),
-	'orderby' => 'date',
+	'orderby' => 'post_date',
 	'order' => 'DESC',
 	'numberposts' => $column_left_limit + $column_featured_limit
 ) );
@@ -32,7 +37,7 @@ $column_center_limit = 3;
 $column_center_posts = get_posts( array(
 	'category' => $column_center_catid,
 	'post_type' => array('post', 'event'),
-	'orderby' => 'date',
+	'orderby' => 'post_date',
 	'order' => 'DESC',
 	'numberposts' => $column_featured_limit + $column_left_limit + $column_center_limit
 ) );
@@ -43,7 +48,7 @@ $column_right_limit = 3;
 $column_right_posts = get_posts( array(
 	'category' => $column_right_catid,
 	'post_type' => array('post', 'event'),
-	'orderby' => 'date',
+	'orderby' => 'post_date',
 	'order' => 'DESC',
 	'numberposts' => $column_featured_limit + $column_left_limit + $column_center_limit + $column_right_limit
 ) );
@@ -60,9 +65,7 @@ $column_right_posts = get_posts( array(
 
   <section class="span-11 extended first halfcolborder">
 	<?php 
-	$column_top_posts = array();
-	array_unshift($column_top_posts, array_shift( $column_featured_posts));
-	array_unshift($column_top_posts, array_shift( $column_featured_posts));
+	$column_top_posts = array_slice( $column_featured_posts, 0, 2 );
 
 	foreach( $column_top_posts as $post ){
 		setup_postdata($post); 
